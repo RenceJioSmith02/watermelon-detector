@@ -1,8 +1,6 @@
 Requirements beh:
 =======================================================================================
-Python:
-Windows 64bit: https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
-Windows 32bit: https://www.python.org/ftp/python/3.11.9/python-3.11.9.exe
+Python: 3.13.1
 
 pip install opencv-python
 

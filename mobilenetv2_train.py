@@ -29,7 +29,7 @@ BATCH_SIZE = 32
 
 INITIAL_EPOCHS = 25
 FINE_TUNE_EPOCHS = 15 
-FINE_TUNE_AT = 145 
+FINE_TUNE_AT = 150 
 LEARNING_RATE_HEAD = 1e-3
 LEARNING_RATE_FINE = 3e-6
 
@@ -233,10 +233,13 @@ f1_per_class        = [report[c]['f1-score']  for c in class_names]
 # ==========================================
 # PLOT 1 – Training History
 # ==========================================
-train_acc  = history1.history['accuracy']  + history2.history['accuracy']
-val_acc    = history1.history['val_accuracy'] + history2.history['val_accuracy']
-train_loss = history1.history['loss']      + history2.history['loss']
-val_loss   = history1.history['val_loss']  + history2.history['val_loss']
+def concat_history(h1, h2, key):
+    return h1.history.get(key, []) + h2.history.get(key, [])
+
+train_acc  = concat_history(history1, history2, 'accuracy')
+val_acc    = concat_history(history1, history2, 'val_accuracy')
+train_loss = concat_history(history1, history2, 'loss')
+val_loss   = concat_history(history1, history2, 'val_loss')
 epochs_range = range(1, len(train_acc) + 1)
 
 plt.figure(figsize=(12, 4))

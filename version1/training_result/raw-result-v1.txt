@@ -1,0 +1,200 @@
+
+(venv) C:\Github-Projects\watermelon-detector>cd version1
+
+(venv) C:\Github-Projects\watermelon-detector\version1>python mobilenetv2_train.py
+2026-03-10 09:26:54.658915: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-03-10 09:27:09.170662: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Found 833 files belonging to 3 classes.
+2026-03-10 09:27:27.497347: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Found 121 files belonging to 3 classes.
+Found 86 files belonging to 3 classes.
+Class order: ['downy_mildew', 'healthy', 'other_diseases']
+2026-03-10 09:27:41.624410: I tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+Class weights: {0: np.float64(0.8956989247311828), 1: np.float64(1.4166666666666667), 2: np.float64(0.8491335372069317)}
+=== Training Head ===
+Epoch 1/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 557ms/step - accuracy: 0.6456 - loss: 0.9549
+Epoch 1: val_loss improved from None to 1.22807, saving model to models/best_model.keras
+
+Epoch 1: finished saving model to models/best_model.keras
+2026-03-10 09:28:20.763786: I tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+
+Epoch 1 – Precision: 0.7088 | Recall: 0.5372 | F1: 0.4927
+27/27 ━━━━━━━━━━━━━━━━━━━━ 37s 1s/step - accuracy: 0.7467 - loss: 0.7243 - val_accuracy: 0.5372 - val_loss: 1.2281 - learning_rate: 0.0010
+Epoch 2/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 578ms/step - accuracy: 0.8458 - loss: 0.4920
+Epoch 2: val_loss improved from 1.22807 to 0.46845, saving model to models/best_model.keras
+
+Epoch 2: finished saving model to models/best_model.keras
+
+Epoch 2 – Precision: 0.8666 | Recall: 0.8678 | F1: 0.8659
+27/27 ━━━━━━━━━━━━━━━━━━━━ 21s 761ms/step - accuracy: 0.8571 - loss: 0.4935 - val_accuracy: 0.8678 - val_loss: 0.4685 - learning_rate: 0.0010
+Epoch 3/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 613ms/step - accuracy: 0.8562 - loss: 0.5048
+Epoch 3: val_loss improved from 0.46845 to 0.37331, saving model to models/best_model.keras
+
+Epoch 3: finished saving model to models/best_model.keras
+2026-03-10 09:29:02.882455: I tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+
+Epoch 3 – Precision: 0.9020 | Recall: 0.9008 | F1: 0.8999
+27/27 ━━━━━━━━━━━━━━━━━━━━ 22s 806ms/step - accuracy: 0.8571 - loss: 0.4935 - val_accuracy: 0.9008 - val_loss: 0.3733 - learning_rate: 0.0010
+Epoch 4/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 582ms/step - accuracy: 0.9086 - loss: 0.3468
+Epoch 4: val_loss did not improve from 0.37331
+
+Epoch 4 – Precision: 0.8859 | Recall: 0.8843 | F1: 0.8845
+27/27 ━━━━━━━━━━━━━━━━━━━━ 19s 715ms/step - accuracy: 0.9028 - loss: 0.3714 - val_accuracy: 0.8843 - val_loss: 0.3902 - learning_rate: 0.0010
+Epoch 5/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 588ms/step - accuracy: 0.8997 - loss: 0.4054
+Epoch 5: val_loss improved from 0.37331 to 0.28569, saving model to models/best_model.keras
+
+Epoch 5: finished saving model to models/best_model.keras
+
+Epoch 5 – Precision: 0.9404 | Recall: 0.9339 | F1: 0.9341
+27/27 ━━━━━━━━━━━━━━━━━━━━ 20s 754ms/step - accuracy: 0.9088 - loss: 0.3998 - val_accuracy: 0.9339 - val_loss: 0.2857 - learning_rate: 0.0010
+Epoch 6/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 586ms/step - accuracy: 0.8982 - loss: 0.3951
+Epoch 6: val_loss did not improve from 0.28569
+
+Epoch 6 – Precision: 0.8800 | Recall: 0.8678 | F1: 0.8677
+27/27 ━━━━━━━━━━━━━━━━━━━━ 19s 722ms/step - accuracy: 0.8980 - loss: 0.3914 - val_accuracy: 0.8678 - val_loss: 0.3853 - learning_rate: 0.0010
+Epoch 7/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 574ms/step - accuracy: 0.9210 - loss: 0.3614
+Epoch 7: val_loss did not improve from 0.28569
+2026-03-10 09:30:21.302999: I tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+
+Epoch 7 – Precision: 0.9245 | Recall: 0.9174 | F1: 0.9173
+27/27 ━━━━━━━━━━━━━━━━━━━━ 20s 725ms/step - accuracy: 0.9172 - loss: 0.3582 - val_accuracy: 0.9174 - val_loss: 0.3039 - learning_rate: 0.0010
+Epoch 8/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 533ms/step - accuracy: 0.9100 - loss: 0.3665
+Epoch 8: val_loss did not improve from 0.28569
+
+Epoch 8 – Precision: 0.9255 | Recall: 0.9174 | F1: 0.9167
+27/27 ━━━━━━━━━━━━━━━━━━━━ 18s 665ms/step - accuracy: 0.9112 - loss: 0.3581 - val_accuracy: 0.9174 - val_loss: 0.3500 - learning_rate: 0.0010
+Epoch 9/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 542ms/step - accuracy: 0.9245 - loss: 0.3390
+Epoch 9: val_loss did not improve from 0.28569
+
+Epoch 9: ReduceLROnPlateau reducing learning rate to 0.0004000000189989805.
+
+Epoch 9 – Precision: 0.9165 | Recall: 0.9008 | F1: 0.9012
+27/27 ━━━━━━━━━━━━━━━━━━━━ 18s 675ms/step - accuracy: 0.9232 - loss: 0.3348 - val_accuracy: 0.9008 - val_loss: 0.3349 - learning_rate: 0.0010
+Epoch 10/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 527ms/step - accuracy: 0.9295 - loss: 0.3101
+Epoch 10: val_loss did not improve from 0.28569
+
+Epoch 10 – Precision: 0.9205 | Recall: 0.9091 | F1: 0.9084
+27/27 ━━━━━━━━━━━━━━━━━━━━ 18s 659ms/step - accuracy: 0.9292 - loss: 0.3067 - val_accuracy: 0.9091 - val_loss: 0.3104 - learning_rate: 4.0000e-04
+=== Fine-tuning ===
+Epoch 11/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 554ms/step - accuracy: 0.8922 - loss: 0.3920
+Epoch 11: val_loss improved from None to 0.30976, saving model to models/best_model.keras
+
+Epoch 11: finished saving model to models/best_model.keras
+
+Epoch 11 – Precision: 0.9342 | Recall: 0.9256 | F1: 0.9258
+27/27 ━━━━━━━━━━━━━━━━━━━━ 35s 940ms/step - accuracy: 0.8884 - loss: 0.4019 - val_accuracy: 0.9256 - val_loss: 0.3098 - learning_rate: 3.0000e-06
+Epoch 12/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 589ms/step - accuracy: 0.9103 - loss: 0.3650
+Epoch 12: val_loss did not improve from 0.30976
+
+Epoch 12 – Precision: 0.9282 | Recall: 0.9174 | F1: 0.9174
+27/27 ━━━━━━━━━━━━━━━━━━━━ 20s 731ms/step - accuracy: 0.8968 - loss: 0.4046 - val_accuracy: 0.9174 - val_loss: 0.3364 - learning_rate: 3.0000e-06
+Epoch 13/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 696ms/step - accuracy: 0.9156 - loss: 0.3409
+Epoch 13: val_loss did not improve from 0.30976
+
+Epoch 13 – Precision: 0.9221 | Recall: 0.9091 | F1: 0.9096
+27/27 ━━━━━━━━━━━━━━━━━━━━ 24s 901ms/step - accuracy: 0.9220 - loss: 0.3306 - val_accuracy: 0.9091 - val_loss: 0.3634 - learning_rate: 3.0000e-06
+Epoch 14/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 755ms/step - accuracy: 0.9230 - loss: 0.3366
+Epoch 14: val_loss did not improve from 0.30976
+
+Epoch 14 – Precision: 0.9120 | Recall: 0.9008 | F1: 0.9011
+27/27 ━━━━━━━━━━━━━━━━━━━━ 25s 914ms/step - accuracy: 0.9148 - loss: 0.3394 - val_accuracy: 0.9008 - val_loss: 0.3840 - learning_rate: 3.0000e-06
+Epoch 15/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 1s/step - accuracy: 0.9019 - loss: 0.3733
+Epoch 15: val_loss did not improve from 0.30976
+
+Epoch 15: ReduceLROnPlateau reducing learning rate to 1.2000000424450263e-06.
+2026-03-10 09:33:34.217870: I tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+
+Epoch 15 – Precision: 0.9120 | Recall: 0.9008 | F1: 0.9011
+27/27 ━━━━━━━━━━━━━━━━━━━━ 36s 1s/step - accuracy: 0.8992 - loss: 0.3812 - val_accuracy: 0.9008 - val_loss: 0.4032 - learning_rate: 3.0000e-06
+Epoch 16/25
+27/27 ━━━━━━━━━━━━━━━━━━━━ 0s 608ms/step - accuracy: 0.9030 - loss: 0.3429
+Epoch 16: val_loss did not improve from 0.30976
+
+Epoch 16 – Precision: 0.9120 | Recall: 0.9008 | F1: 0.9011
+27/27 ━━━━━━━━━━━━━━━━━━━━ 20s 744ms/step - accuracy: 0.9040 - loss: 0.3487 - val_accuracy: 0.9008 - val_loss: 0.4196 - learning_rate: 1.2000e-06
+
+=== Threshold Optimization (on validation set) ===
+Running 2D threshold grid search (coarse)...
+Fine-tuning around best point...
+
+Baseline (argmax):       Macro F1 = 0.9307
+Optimized thresholds:    Macro F1 = 0.9472
+  Downy threshold:  0.76
+  Other threshold:  0.22
+
+Val set per-class with optimized thresholds:
+  downy_mildew: Recall=0.936, Precision=0.957
+  healthy: Recall=0.966, Precision=0.875
+  other_diseases: Recall=0.956, Precision=1.000
+
+Saved threshold config → models/threshold_config.json
+
+=== Final Test Evaluation ===
+Test Loss: 0.2316, Test Accuracy: 0.9535
+
+Generating predictions for evaluation...
+
+--- Baseline argmax (all thresholds = 0.5) ---
+Downy Recall:  1.000
+Other Recall:  0.906
+Overall Acc:   0.953
+
+--- Threshold-Optimized (downy=0.76, other=0.22) ---
+Downy Recall:  1.000
+Other Recall:  0.938
+Overall Acc:   0.953
+  Saved → web\static\plots\training_history.png
+  Saved → web\static\plots\confusion_matrix.png
+  Saved → web\static\plots\per_class_metrics.png
+  Saved → web\static\plots\support_distribution.png
+  Saved → web\static\plots\prf1_over_epochs.png
+  Saved → web\static\plots\roc_curve.png
+  Saved → web\static\plots\overall_performance.png
+
+All plots saved to: web\static\plots
+
+======================================================================
+FINAL PERFORMANCE SUMMARY
+======================================================================
+Test Accuracy:        0.9535
+Weighted Precision:   0.9549
+Weighted Recall:      0.9535
+Weighted F1-Score:    0.9533
+ROC-AUC (micro):      0.9988
+======================================================================
+
+======================================================================
+PER-CLASS PERFORMANCE SUMMARY
+======================================================================
+Classes                    Precision     Recall   F1-Score    Support
+----------------------------------------------------------------------
+downy_mildew                    0.94       1.00       0.97         31
+healthy                         1.00       0.91       0.95         23
+other_diseases                  0.94       0.94       0.94         32
+----------------------------------------------------------------------
+
+Accuracy                                              0.95         86
+Macro avg.                      0.96       0.95       0.95         86
+Weighted avg.                   0.95       0.95       0.95         86
+======================================================================
+
+Training complete! Model saved as 'models/best_model.keras'
+All evaluation plots saved and ready for Flask app.
+
+(venv) C:\Github-Projects\watermelon-detector\version1>

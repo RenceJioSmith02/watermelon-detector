@@ -1,0 +1,8 @@
+{
+  "downy_threshold": 0.76,
+  "other_threshold": 0.22,
+  "downy_class_index": 0,
+  "other_class_index": 2,
+  "note": "Priority: if downy_mildew score >= downy_threshold \u2192 downy_mildew. Elif other_diseases score >= other_threshold \u2192 other_diseases. Else \u2192 healthy."
+}
+

@@ -33,9 +33,6 @@ FINE_TUNE_AT = 150
 LEARNING_RATE_HEAD = 1e-3
 LEARNING_RATE_FINE = 3e-6
 
-# Class index constants (alphabetical: downy_mildew=0, healthy=1, other_diseases=2)
-# These are set after loading the dataset — defined here for reference.
-# Verified at runtime via `class_names` from the dataset loader.
 DOWNY_CLASS_INDEX = 0   # downy_mildew
 OTHER_CLASS_INDEX = 2   # other_diseases
 
@@ -45,7 +42,6 @@ PLOTS_DIR = os.path.join("web", "static", "plots")
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
 def savefig(name):
-    """Tight-save and close the current figure."""
     plt.tight_layout()
     plt.savefig(os.path.join(PLOTS_DIR, name), dpi=150, bbox_inches="tight")
     plt.close()
@@ -76,7 +72,6 @@ class_names = train_ds_raw.class_names
 NUM_CLASSES = len(class_names)
 print("Class order:", class_names)
 
-# Verify class index assumptions match actual dataset order
 assert class_names[DOWNY_CLASS_INDEX] == "downy_mildew", (
     f"Expected downy_mildew at index {DOWNY_CLASS_INDEX}, got {class_names[DOWNY_CLASS_INDEX]}"
 )
@@ -220,7 +215,7 @@ model.save("models/best_model.keras")
 # POST-TRAINING THRESHOLD OPTIMIZATION
 # ─────────────────────────────────────────
 # WHY: argmax (default 0.5 threshold) treats all classes equally.
-# Downy mildew is a high-risk disease — we want to catch it even at
+# Downy mildew is a high-risk disease we want to catch it even at
 # lower confidence scores, accepting a slight precision trade-off.
 # other_diseases is a catch-all, so it also benefits from a tuned threshold.
 #

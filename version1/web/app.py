@@ -35,7 +35,7 @@ if os.path.exists(_THRESHOLD_CONFIG_PATH):
     OTHER_IDX       = _thresh.get("other_class_index", 2)
     print(f"Loaded thresholds — Downy: {DOWNY_THRESHOLD}, Other: {OTHER_THRESHOLD}")
 else:
-    # Fallback defaults if config not found (run training first to generate it)
+    # Fallback defaults if config not found
     DOWNY_THRESHOLD = 0.45
     OTHER_THRESHOLD = 0.40
     DOWNY_IDX       = 0
@@ -70,10 +70,6 @@ def classify_with_thresholds(preds):
       2. Else if other_diseases confidence >= OTHER_THRESHOLD → predict other_diseases
       3. Else → predict healthy
 
-    This replaces the old hardcoded CONFIDENCE_THRESHOLD=0.90 whitelist which:
-      - Silently reclassified downy_mildew at 89% confidence as "other_diseases"
-      - Never directly predicted "other_diseases" (it was only a fallback)
-    The dynamic thresholds are tuned per training run on the actual validation set.
     """
     downy_score = float(preds[DOWNY_IDX])
     other_score = float(preds[OTHER_IDX])
@@ -123,13 +119,13 @@ def predict():
 
     preds = model.predict(x, verbose=0)[0]
 
-    # Use threshold-based classification (replaces argmax + 90% whitelist)
+    # Use threshold-based classification
     predicted_class, decision_score = classify_with_thresholds(preds)
 
     # Build probability dict for all classes
     probs_dict = {CLASSES[i]: float(preds[i]) for i in range(len(CLASSES))}
 
-    # Chart data (fixed order for frontend consistency)
+    # Chart data
     chart_classes = ["downy_mildew", "healthy", "other_diseases"]
     chart_probs   = [
         probs_dict.get("downy_mildew",   0.0),

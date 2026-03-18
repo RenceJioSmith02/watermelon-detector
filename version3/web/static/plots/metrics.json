@@ -1,0 +1,58 @@
+{
+  "test_accuracy": 0.9651,
+  "precision": 0.9889,
+  "recall": 0.9884,
+  "f1_score": 0.9884,
+  "roc_auc": 0.9989,
+  "class_names": [
+    "downy_mildew",
+    "healthy",
+    "other_diseases"
+  ],
+  "confusion_matrix": [
+    [
+      31,
+      0,
+      0
+    ],
+    [
+      0,
+      23,
+      0
+    ],
+    [
+      0,
+      1,
+      31
+    ]
+  ],
+  "precision_per_class": [
+    1.0,
+    0.9583,
+    1.0
+  ],
+  "recall_per_class": [
+    1.0,
+    1.0,
+    0.9688
+  ],
+  "f1_per_class": [
+    1.0,
+    0.9787,
+    0.9841
+  ],
+  "support": [
+    31,
+    23,
+    32
+  ],
+  "plots": [
+    "training_history.png",
+    "confusion_matrix.png",
+    "per_class_metrics.png",
+    "support_distribution.png",
+    "prf1_over_epochs.png",
+    "roc_curve.png",
+    "overall_performance.png"
+  ]
+}

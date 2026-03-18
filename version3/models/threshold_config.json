@@ -1,0 +1,8 @@
+{
+  "downy_threshold": 0.8,
+  "healthy_threshold": 0.5,
+  "downy_class_index": 0,
+  "healthy_class_index": 1,
+  "other_class_index": 2,
+  "note": "Priority: downy_mildew >= downy_threshold \u2192 downy_mildew. Elif healthy >= healthy_threshold \u2192 healthy. Else \u2192 other_diseases (unconditional last-resort fallback). (Search floors: downy>=0.5, healthy>=0.5)"
+}
